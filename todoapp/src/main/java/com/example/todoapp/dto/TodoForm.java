@@ -11,14 +11,14 @@ public class TodoForm {
 
 //    public TodoForm(String content) {
 //        this.content = content;
-//    }
+//    }  => @AllArgsConstructor
 
 //    @Override
 //    public String toString() {
 //        return "TodoForm{" +
 //                "content='" + content + '\'' +
 //                '}';
-//    }
+//    }  => @ToString
 
     private String content;
 

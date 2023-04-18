@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,14 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Todo App</h1>
-    <form method="post" action="/addTodo">
-        <input type="text" name="content" />
-        <input type="submit" value="Add Todo"/>
-    </form>
-    <hr />
-    <ul th:each="item, idx: ${todoList}">
-        <il th:text="${item}">gg</il>
-    </ul>
+<div th:object="${todo}">
+
+    <h1 th:text="${todo}">hi</h1>
+
+</div>
 </body>
 </html>
+

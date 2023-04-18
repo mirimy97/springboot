@@ -1,6 +1,7 @@
 package com.example.todoapp.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Column;
@@ -9,7 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity  // DB가 해당 객체를 인식 가능!
-@AllArgsConstructor // 생성자 Lombok
+@AllArgsConstructor // 생성자 Lombok,
+@NoArgsConstructor // 디폴트 생성자
 @ToString  // toString Lombok
 public class Todo {
     @Id
@@ -18,6 +20,10 @@ public class Todo {
 
     @Column
     private String content;
+
+//    Todo() {
+//
+//    } => 디폴트 생성자 @NoArgsConstructor
 
 //    @Override
 //    public String toString() {
