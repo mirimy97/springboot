@@ -1,6 +1,8 @@
 package com.example.todoapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -13,12 +15,19 @@ import javax.persistence.Id;
 @AllArgsConstructor // 생성자 Lombok,
 @NoArgsConstructor // 디폴트 생성자
 @ToString  // toString Lombok
+@Getter
 public class Todo {
     @Id
     @GeneratedValue // 1, 2, 3... 자동생성 어노테이션
+    @JsonProperty("id")
     private Long id;
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @Column
+    @JsonProperty("content")
     private String content;
 
 //    Todo() {

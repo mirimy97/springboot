@@ -39,17 +39,17 @@ public class TodoAppController {
 
     @PostMapping("/addTodo")
     public String addTodo(TodoForm form) {
-        log.info(form.toString());
+//        log.info(form.toString());
 //        System.out.println(form.toString());   => 로깅 기능으로 대체
 
         // 1. dto를 Entity로 변환
         Todo todo = form.toEntity();
-        log.info(todo.toString());
+//        log.info(todo.toString());
 //        System.out.println(todo.toString());
 
         // 2. Repository 에게 Entity를 DB에 저장하게 함
         Todo saved = toDoRepository.save(todo);
-        log.info(saved.toString());
+//        log.info(saved.toString());
 //        System.out.println(saved.toString());
 
         return "redirect:/";
@@ -59,7 +59,7 @@ public class TodoAppController {
     @GetMapping("/{id}")
     public String show(@PathVariable Long id, Model model) {
         // 0. url로 전해진 params 가져오기
-        log.info("id= " + id);
+//        log.info("id= " + id);
 
         // 1. id로 데이터를 가져옴
         // id 값으로 찾고 (fineById), 없다면 null을 반환 .orElse(null)

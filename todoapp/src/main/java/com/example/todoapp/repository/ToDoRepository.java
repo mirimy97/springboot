@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 
 @Repository
-public interface ToDoRepository extends CrudRepository<Todo, Long> {  // <관리대상 entity, entity 대표값 type>
+public interface ToDoRepository extends JpaRepository<Todo, Long> {  // <관리대상 entity, entity 대표값 type>
 
     // 우클릭 - Generate - Override Method
     @Override
